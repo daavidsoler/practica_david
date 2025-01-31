@@ -17,8 +17,7 @@ class Usuario extends Model {
         return $this->belongsToMany(Circuito::class, 'usuario_circuito');
     }
 
-    public function tiemposDeVuelta() {
-        return $this->hasMany(UsuarioCircuitoCoche::class);
-    }
+    public $timestamps = false;
+
 }
 
