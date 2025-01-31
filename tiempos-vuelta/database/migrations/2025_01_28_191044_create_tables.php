@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->string('username')->unique();
             $table->string('email');
             $table->string('password'); 
-        });        
+            });        
 
         Schema::create('detalles_coche', function (Blueprint $table) {
             $table->id();

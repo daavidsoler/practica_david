@@ -12,6 +12,12 @@ class UsuarioSeeder extends Seeder {
             'email' => 'player1@gmail.com',
             'password' => ('player1')
         ]);
+
+        Usuario::create([
+            'username' => 'player2',
+            'email' => 'player2@gmail.com', 
+            'password' => ('player2')
+        ]);
     }
 }
 
