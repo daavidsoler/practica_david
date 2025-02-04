@@ -66,11 +66,8 @@ php artisan serve
 ```
 Esto ejecutará el servidor en `http://127.0.0.1:8000`.
 
-### 9️⃣ **Probar la API con Postman o cURL**
-Ejemplo de prueba con `cURL`:
-```bash
-curl -X GET http://127.0.0.1:8000/api/usuarios
-```
+### 9️⃣ **Probar la API con Postman**
+
 
 ## 🖼️ Esquema de la Base de Datos
 A continuación, se muestra la estructura de la base de datos utilizada en este proyecto:
