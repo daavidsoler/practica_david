@@ -2,47 +2,48 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Coche;
 use Illuminate\Http\Request;
 
-class CocheController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+class CocheController extends Controller {
+    
+    // Obtener todos los coches
+    public function index() {
+        return Coche::with(['detalles','usuarios'])->get();
+        // return response()->json(Coche::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    // Crear un nuevo coche
+    public function store(Request $request) {
+        $request->validate([
+            'nombre_coche' => 'required|unique:coches',
+            'detalles_coche_id' => 'required|exists:detalles_coche,id'
+        ]);
+
+        $coche = Coche::create($request->all());
+        return response()->json($coche, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    // Obtener un coche por ID
+    public function show($id) {
+        $coche = Coche::findOrFail($id);
+        $coche -> load('detalles');
+        return response()->json($coche);
+    
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+    // Actualizar un coche por ID
+    public function update(Request $request, $id) {
+        $coche = Coche::findOrFail($id);
+        $coche->update($request->all());
+       // return response()->json($coche);
+       // return $coche::with(['detalles','usuarios'])->get();
+        return "ok";
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+    // Eliminar un coche por ID
+    public function destroy($id) {
+        Coche::destroy($id);
+        return response()->json(['message' => 'Coche eliminado']);
     }
 }
