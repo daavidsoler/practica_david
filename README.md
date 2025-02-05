@@ -1,7 +1,24 @@
 # Proyecto Leaderboard - Laravel API
 
+## 📌 Supuesto Práctico: Sistema de Leaderboard para un Videojuego de Carreras
 
-## 🚀 Pasos para Levantar la Aplicación
+En IG Formación, para realziar un torneo por el final de curso, se ha solicitado el desarrollo de un **sistema de leaderboard** para un videojuego de carreras. El objetivo principal es gestionar los tiempos de vuelta de los jugadores en diferentes circuitos, permitiendo así un **ranking dinámico y actualizado** de los mejores pilotos en cada pista y con cada vehículo.
+
+En este primer prototipo, se debe permitir que los usuarios se registren para realizar el torneo, donde serán asociados a un circuito específico y al coche utilizado.
+
+Para esto, se han modelado las siguientes entidades:
+- **Usuarios**: Representa a los jugadores, con datos como nombre y email.
+- **Coches**: Vehículos utilizados en las carreras, con sus detalles técnicos (peso, caballos, tracción).
+- **Circuitos**: Pistas donde se corren las vueltas, con información de ubicación y longitud.
+
+Este sistema proporciona una plataforma para que los jugadores compitan de manera justa y transparente, promoviendo el análisis de datos y la mejora continua de su rendimiento en cada circuito. 
+
+## 🖼️ Esquema de la Base de Datos
+A continuación, se muestra la estructura de la base de datos utilizada en este proyecto:
+
+![Base de Datos](BBD_practica.png)
+
+### 🚀 Pasos para Levantar la Aplicación
 
 ### 1️⃣ **Clonar el Repositorio**
 ```bash
@@ -67,12 +84,6 @@ php artisan serve
 Esto ejecutará el servidor en `http://127.0.0.1:8000`.
 
 ### 9️⃣ **Probar la API con Postman**
-
-
-## 🖼️ Esquema de la Base de Datos
-A continuación, se muestra la estructura de la base de datos utilizada en este proyecto:
-
-![Base de Datos](BBD_practica.png)
 
 ---
 ✅ **Siguiendo estos pasos, la aplicación estará lista para su uso y desarrollo.** 🚀
